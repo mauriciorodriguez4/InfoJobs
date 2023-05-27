@@ -1,0 +1,66 @@
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/*Mauri*/
+#barra {
+    background: #365A08;
+    color: white;
+}
+#seccion-uno{
+    background: #F65151;
+}
+.azul{
+    background: #175676;
+    color: white;
+}
+#seccion-tres {
+    background: #4cb3a3;
+    color: white;
+}
+.verdebtn {
+    background: #093f14;    
+}
+#seccion-cinco {
+    background: #04652c;
+}
+#parte-cinco {
+    background: #0ea455;
+}
+#imagen {
+    width: 450px;
+    height: 350px;
+}
+#final {
+    background: #2c145b;
+}
+/*Elias */
+.linea {
+    border-left: 1px solid black;
+    height: 100%;
+}
+
+.color-hr {
+    border-top: 3px solid black !important;
+}
+
+.letra {
+    color: black;
+}
+
+.margen {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.color {
+    color: white;
+    text-decoration: none;
+}
+
+.trabajo {
+    display: flex;
+}
