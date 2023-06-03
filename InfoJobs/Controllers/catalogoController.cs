@@ -1,4 +1,4 @@
-﻿using InfoJobs.Models;
+﻿  using InfoJobs.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -14,7 +14,7 @@ namespace InfoJobs.Controllers
 
         public IActionResult Index()
         {
-            var listaCategoria = (from t in _infojobsContext.categoria select t).ToList();
+            /*var listaCategoria = (from t in _infojobsContext.categoria select t).ToList();
             ViewData["listaCategoria"] = new SelectList(listaCategoria, "id_categoria", "nombre_categoria");
 
             var listaDepartamentos = (from t in _infojobsContext.ubicacion select t).ToList();
@@ -27,7 +27,7 @@ namespace InfoJobs.Controllers
             ViewData["listaSectores"] = new SelectList(listaSectores, "id_sector", "tipo_sector");
 
             var listaExperiencia = (from t in _infojobsContext.experiencia select t).ToList();
-            ViewData["listaExperiencia"] = new SelectList(listaExperiencia, "id_experiencia", "cantidad");
+            ViewData["listaExperiencia"] = new SelectList(listaExperiencia, "id_experiencia", "cantidad");*/
 
             return View();
         }
@@ -35,7 +35,7 @@ namespace InfoJobs.Controllers
         public IActionResult busqueda(string nombre, int? categoria, int? ubicacion, DateTime? fechaPublicacion)
         {
             // Lógica de búsqueda y filtrado
-            var trabajos = _infojobsContext.trabajos.AsQueryable();
+           /* var trabajos = _infojobsContext.trabajos.AsQueryable();
 
             if (!string.IsNullOrEmpty(""))
             {
@@ -57,8 +57,8 @@ namespace InfoJobs.Controllers
             if (fechaPublicacion.HasValue)
             {
                 trabajos = trabajos.Where(t => t.fecha_publicacion == fechaPublicacion.Value);
-            }
-            return View(trabajos.ToList());
+            }*/
+            return View(/*trabajos.ToList()*/);
 
 
 

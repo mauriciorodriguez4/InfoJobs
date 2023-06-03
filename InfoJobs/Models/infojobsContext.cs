@@ -8,6 +8,7 @@ namespace InfoJobs.Models
         {
         }
 
+        public DbSet<aplicante> aplicante {get; set;}
         public DbSet<trabajos> trabajos { get; set; }
 
         public DbSet<categoria> categoria { get; set; }
@@ -18,8 +19,15 @@ namespace InfoJobs.Models
 
         public DbSet<contrato> contrato { get; set; }
 
+        public DbSet<recursos> recursos { get; set; }
+
         public DbSet<experiencia> experiencia { get; set; }
 
         public DbSet<oferta> oferta { get; set; }
+
+        public DbSet<empresa> empresa { get; set; }
+
+        public DbSet<asesoramiento> asesoramiento { get; set; }
+        public DbSet<comentarios> comentarios { get; set; }
     }
 }

@@ -2,113 +2,126 @@
     ViewData["Title"] = "Empleo Especifico-InfoJobs";
 }
 
+
+
 <div class="container-fluid">
-
-
-
-    <div class="row p-5">
-        <div class="row no-gutters">
-            <div class="col-md-3 col-sm-12">
-                <div class="card align-items-center pt-2 my-5 pb-2 px-3">
-                    <div>
-                        <img class="m-3" src="./img/pizzaHut.png" alt="" height="200" width="200">
-                    </div>
-                    <div>
-                        <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, error explicabo. Ex unde earum dolorum corporis illo, placeat aliquam ratione odio saepe, accusantium iure rem fuga nihil, temporibus fugit atque esse cupiditate quisquam adipisci soluta quas.</p>
-                    </div>
-                </div>
+    @foreach (var oferta in (IEnumerable<dynamic>)ViewData["listadoDeOfer"])
+    {
+        @if (TempData["Mensaje"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Mensaje"]
             </div>
-            <div class="col-md-6 col-sm-12">
-                <div class="card mt-5">
-                    <div>
-                        <h2 class="mx-4 mt-3 text-start">Detalles del empleo</h2>
-                    </div>
-                    <div>
-                        <p class="p-4">
-                            necessitatibus apsapiente perferendis repelleni culpa rem modi tempora repudiandae veritatis illo expedita. Aliquam aliquid sunt molestiae doloremque, nam impedit beatae dolores perspiciatis expedita deleniti illum ad totam? Quidem tempore perspiciatis
-                            ducimus ab a tenetur atque voluptates velit? Nihil officia cupiditate consequuntur voluptas esse nostrum harum inventore? Necessitatibus, adipisci, labore odio amet veniam architecto ad esse at minima ea fugiat modi deserunt explicabo inventore quam ipsum exercitationem voluptate
-                            quisquam, perspiciatis accusantium. Maxime exercitationem, dolores quibusdam ea ab nemo voluptatum tenetur neque ex distinctio. Explicabo, enim! Unde totam pariatur, dignissimos debitis similique deserunt corporis nihil, fugit nesciunt molestiae corrupti quod sequi officia alias
-                            excepturi minima est nulla sint, natus reiciendis accusamus voluptates! Labore, quasi aut pariatur exercitationem beatae unde similique voluptate, reprehenderit incidunt sapiente, asperiores soluta aperiam quas?
-                        </p>
-                    </div>
-                </div>
+        }
+        if (TempData["Mensaje"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["Mensaje2"]
             </div>
-            <div class="col-md-3 col-sm-12">
-                <div class="card my-5 p-4">
-                    <h5 class="mb-4">Adjunta tu curriculum</h5>
-                    <input type="file">
-                    <button type="submit" class="btn btn-success my-4">Envíar curriculum</button>
-                </div>
-            </div>
-
-        </div>
-        <div class="row no-gutters my-4">
-            <div class="col-md-7 col-sm-12">
-                <div class="card">
-                    <div>
-                        <h2 class="mx-4 mt-3 text-start">Requisitos del empleo</h2>
-                    </div>
-                    <div>
-                        <p class="p-4">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis alias excepturi illo distinctio deleniti adipisci impedit, nostrum saepe! Odit numquam dolore reiciendis unde nisi itaque ducimus dignissimos suscipit blanditiis, necessitatibus aperiam accusamus quod quas voluptatibus rerum animi adipisci cupiditate a fugit. Facilis nam ut modi nemo accusantium,
-                            quisquam eos corporis quaerat, porro voluptatibus animi minima. Eos voluptas, sapiente perferendis repellendus quo, doloremque architecto ex expedita, nostrum doloribus ut eum nulla debitis odio laudantium ducimus fugit ea! Eaque magni culpa rem modi tempora repudiandae veritatis illo expedita. Aliquam aliquid sunt molestiae doloremque, nam impedit beatae dolores perspiciatis
-                            expedita deleniti illum ad totam? Quidem tempore perspiciatis ducimus ab a tenetur atque voluptates velit? Nihil officia cupiditate consequuntur voluptas esse nostrum harum inventore? Necessitatibus, adipisci, labore odio amet veniam architecto ad esse at minima ea fugiat modi deserunt explicabo inventore quam ipsum exercitationem voluptate quisquam, perspiciatis accusantium.
-                            Maxime exercitationem, dolores quibusdam ea ab nemo voluptatum tenetur neque ex distinctio. Explicabo, enim! Unde totam pariatur, dignissimos debitis similique deserunt corporis nihil, fugit nesciunt molestiae corrupti quod sequi officia alias excepturi minima est nulla sint, natus reiciendis accusamus voluptates! Labore, quasi aut pariatur exercitationem beatae unde similique
-                            voluptate, reprehenderit incidunt sapiente, asperiores soluta aperiam quas?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5 col-sm-12">
-                <div class="card text-start p-4">
-                    <div>
-                        <h4>Comentarios</h4>
-                    </div>
-                    <div class="my-3">
-                        <button class="btn btn-warning">Ver otros comentarios</button>
-                    </div>
-                    <form asp-action="comentario">
-                        <p>Deja tu comentario</p>
-                        <input class="form-control" placeholder="...">
-                        <div class="mt-3">
-                            <input type="submit" class="btn btn-success w-100" value="Enviar comentario" />
-                        </div>
-                    </form>
-
-                    <form asp-action="Valoracion">
+        }
+        <div class="row p-5">
+            <div class="row no-gutters">
+                <div class="col-md-3 col-sm-12">
+                    <div class="card align-items-center pt-2 my-5 pb-2 px-3">
                         <div>
-                            <p class="mt-5">Valoracion</p>
-                            <div class="form-check form-check-inline">
-                                @Html.Label("lblOpcion1","1")
-                                @Html.RadioButton("valoracion","",new{@class="form-control"})
-                            </div>
-                            <div class="form-check form-check-inline">
-                                @Html.Label("lblOpcion1","2")
-                                @Html.RadioButton("valoracion","",new{@class="form-control"})
-                            </div>
-                            <div class="form-check form-check-inline">
-                                @Html.Label("lblOpcion1","3")
-                                @Html.RadioButton("valoracion","",new{@class="form-control"})
-                            </div>
-                            <div class="form-check form-check-inline">
-                                @Html.Label("lblOpcion1","4")
-                                @Html.RadioButton("valoracion","",new{@class="form-control"})
-                            </div>
-                            <div class="form-check form-check-inline">
-                                @Html.Label("lblOpcion1","5")
-                                @Html.RadioButton("valoracion","",new{@class="form-control"})
-                            </div>
+                            <img class="m-3" src="/img/@oferta.logo" alt="" height="200" width="200">
                         </div>
-
-                        <div class="mt-3">
-                            <input type="submit" class="btn btn-success w-100" value="Enviar valoracion" />
+                        <div>
+                            <p class="text-center">@oferta.nombre</p>
+                            <p class="text-center">Contacto: @oferta.contacto</p>
                         </div>
-
-                    </form>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="card mt-5">
+                        <div>
+                            <h1 class="mx-4 mt-3 text-start">@oferta.titulo</h1>
+                            <h2 class="mx-4 mt-3 text-start">Detalles del empleo</h2>
+                        </div>
+                        <div>
+                            <p class="p-4">
+                                @oferta.descripcion
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div class="card my-5 p-4">
+                        <h5 class="mb-4">Adjunta tu curriculum</h5>
+                        @if (TempData["Mensaje3"] != null)
+                        {
+                            <div class="alert alert-danger">
+                                @TempData["Mensaje3"]
+                            </div>
+                        }
+                        <form asp-action="subirArchivo" method="post" enctype="multipart/form-data">
+                            <input type="file" accept=".docx,.pdf" class="form-control" id="archivo" name="archivo">
+                            <input type="hidden" name="id_oferta" value="@oferta.id_oferta">
+                            <input type="hidden" name="id_empresa" value="@oferta.id_empresa">
+                            <input type="hidden" name="id_usuario" value="1">
+                            <input type="hidden" name="Estado" value="P">
+                            <button type="submit" class="btn btn-success my-4">Envíar curriculum</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters my-4">
+                <div class="col-md-7 col-sm-12">
+                    <div class="card">
+                        <div>
+                            <h2 class="mx-4 mt-3 text-start">Requisitos del empleo</h2>
+                        </div>
+                        <div>
+                            <p class="p-4">
+                                @oferta.requisitos
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <div class="card text-start p-4">
+                        <div>
+                            <h4>Comentarios</h4>
+                        </div>
+                        <div class="my-3">
+                            <button class="btn btn-warning">Ver otros comentarios</button>
+                        </div>
+                        <form asp-action="comentario">
+                            <p>Deja tu comentario</p>
+                            <input class="form-control" placeholder="...">
+                            <div class="mt-3">
+                                <input type="submit" class="btn btn-success w-100" value="Enviar comentario" />
+                            </div>
+                        </form>
+                        <form asp-action="Valoracion">
+                            <div>
+                                <p class="mt-5">Valoracion</p>
+                                <div class="form-check form-check-inline">
+                                    @Html.Label("lblOpcion1","1")
+                                    @Html.RadioButton("valoracion","",new{@class="form-control"})
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    @Html.Label("lblOpcion1","2")
+                                    @Html.RadioButton("valoracion","",new{@class="form-control"})
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    @Html.Label("lblOpcion1","3")
+                                    @Html.RadioButton("valoracion","",new{@class="form-control"})
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    @Html.Label("lblOpcion1","4")
+                                    @Html.RadioButton("valoracion","",new{@class="form-control"})
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    @Html.Label("lblOpcion1","5")
+                                    @Html.RadioButton("valoracion","",new{@class="form-control"})
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
+    }
 </div>
+
